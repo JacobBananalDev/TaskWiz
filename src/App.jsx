@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addTask, deleteTask } from './features/taskWizSlice';
 import { motion } from 'framer-motion';
 import { FaTrash } from 'react-icons/fa';
-import { SiTailwindcss, SiRedux, SiFramer } from 'react-icons/si';
+import TechStack from './components/TechStack/TechStack';
 
 function App() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const todos = useSelector((state) => state.tasks.items);
   const dispatch = useDispatch();
 
@@ -63,11 +63,7 @@ function App() {
           ))}
         </motion.div>
       </div>
-      <div className="flex justify-center mt-6 space-x-4 text-xl">
-        <SiTailwindcss className="text-blue-400" />
-        <SiRedux className="text-purple-500" />
-        <SiFramer className="text-red-400" />
-      </div>
+      <TechStack/>
     </div>
   );
 };
